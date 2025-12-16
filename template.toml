@@ -1,0 +1,29 @@
+# Required, name of the template
+name = "python-template"
+description = "A template that enforces best practices for Python projects."
+kickstart_version = 1
+authors = ["Liam Power <info@liampower.dev>"]
+follow_symlinks = false
+keywords = []
+ignore = ["README.md", "docs", ".venv", "venv", ".env", "env", ".git"]
+
+[[variables]]
+name = "project_name"
+default = "my_project"
+prompt = "What is the name of this project?"
+validation = "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
+help = "The project name should be lowercase and must."
+
+[[variables]]
+name = "python_version"
+default = "3.12"
+prompt = "Which Python version will this project use?"
+choices = ["3.13", "3.12", "3.11", "3.10", "3.9", "3.8", "3.7"]
+validation = "^(3\\.7|3\\.8|3\\.9|3\\.10|3\\.11|3\\.12)$"
+
+[[variables]]
+name = "project_description"
+default = "A short description of the project."
+prompt = "Provide a short description of the project."
+validation = "^.{10,}$"
+help = "The description should be at least 10 characters long."
