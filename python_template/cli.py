@@ -1,22 +1,16 @@
 import argparse
+import logging
+
+logging.basicConfig(level=logging.INFO)
+logger = logging.getLogger(__name__)
 
 
-def hello(name: str | None = None) -> str:
-    if name:
-        return f"Hello, {name}!"
-    return "Hello, World!"
+def hello(name: str) -> str:
+    return f"Hello, {name}!"
 
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Greet the user.")
     parser.add_argument("--name", type=str, help="Name of the person to greet", required=True)
     args = parser.parse_args()
-
-    if not args.name:
-        raise ValueError("Name argument is required.")
-
-    print(hello(args.name))
-
-
-if __name__ == "__main__":
-    main()
+    logger.info(hello(args.name))

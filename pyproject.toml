@@ -34,15 +34,29 @@ select = [
     "SIM",    # flake8-simplify
     "TCH",    # flake8-type-checking
     "PTH",    # flake8-use-pathlib
+    "C901",   # mccabe complexity
+    "N",      # pep8-naming
+    "RET",    # flake8-return
+    "TRY",    # tryceratops (exception handling)
+    "PERF",   # perflint
+    "RUF",    # ruff-specific rules
+    "ERA",    # eradicate (commented-out code)
+    "T20",    # flake8-print
+    "PLR",    # pylint refactor
 ]
+
+[tool.ruff.lint.mccabe]
+max-complexity = 10
+
+[tool.ruff.lint.pylint]
+max-args = 5
+max-branches = 12
+max-statements = 50
 
 [tool.mypy]
 python_version = "3.12"
-warn_return_any = true
-warn_unused_configs = true
+strict = true
 ignore_missing_imports = true
-disallow_untyped_defs = true
-exclude = "test_*"
 
 [tool.bandit]
 exclude_dirs = ["tests"]

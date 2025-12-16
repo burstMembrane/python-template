@@ -11,7 +11,8 @@ Template for a minimal, tested Python package with a CLI.
 
 ## Tooling
 
-- Formatting/linting: `ruff`
+- Formatting: `make format`
+- Linting: `make lint`
 - Type checks: `mypy`
 - Security: `bandit`, `pip-audit`
 - Hooks: `pre-commit run --all-files`
