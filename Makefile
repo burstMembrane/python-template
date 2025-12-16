@@ -18,5 +18,6 @@ audit:
 	uv run pip-audit
 pre-commit:
 	uv run pre-commit run --all-files
+pre-push: lint typecheck test bandit audit deptry
 rulesync:
 	npx rulesync generate
