@@ -18,6 +18,12 @@ repos:
         name: Lint code
         entry: make lint
 
+      - id: format
+        name: Format check
+        entry: make format-check
+        language: system
+        pass_filenames: false
+
       - id: bandit
         name: Security check (bandit)
         entry: make bandit

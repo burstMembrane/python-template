@@ -1,4 +1,4 @@
-.PHONY: install venv build typecheck test lint deptry bandit audit pre-commit pre-push rulesync
+.PHONY: install venv build typecheck test lint format format-check deptry bandit audit pre-commit pre-push rulesync
 install:
 	uv sync 
 venv:
@@ -11,6 +11,10 @@ test:
 	uv run pytest tests 
 lint:
 	uv run ruff check python_template tests
+format:
+	uv run ruff format python_template tests
+format-check:
+	uv run ruff format --check python_template tests
 deptry:
 	uv run deptry python_template
 bandit:

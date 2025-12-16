@@ -1,7 +1,4 @@
-from typing import Optional
-
-
-def hello(name: Optional[str] = None) -> str:
+def hello(name: str | None = None) -> str:
     if name:
         return f"Hello, {name}!"
     return "Hello, World!"
