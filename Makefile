@@ -1,4 +1,4 @@
-.PHONY: install venv build typecheck test lint format format-check deptry bandit audit pre-commit pre-push rulesync
+.PHONY: install venv build typecheck test lint format format-check deptry bandit audit pre-commit pre-push rulesync clean
 install:
 	uv sync 
 venv:
@@ -26,3 +26,5 @@ pre-commit:
 pre-push: lint typecheck test bandit audit deptry
 rulesync:
 	npx rulesync generate
+clean:
+	rm -rf build dist *.egg-info .pytest_cache .mypy_cache .ruff_cache htmlcov .coverage
