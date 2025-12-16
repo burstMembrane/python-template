@@ -1,3 +1,4 @@
+.PHONY: install venv build typecheck test lint deptry bandit audit pre-commit pre-push rulesync
 install:
 	uv sync 
 venv:
