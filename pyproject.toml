@@ -49,7 +49,10 @@ select = [
     "T20",    # flake8-print
     "PLR",    # pylint refactor
 ]
-ignore = ["D100", "D104"]  # optional
+ignore = ["D100", "D400", "D104","D200","D401","D205"]  # optional
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["D"]
 
 [tool.ruff.lint.pydocstyle]
 convention = "numpy"

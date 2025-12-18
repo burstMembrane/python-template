@@ -33,4 +33,5 @@ bootstrap:
 	git init
 	uv run pre-commit install
 	uv run pytest tests
+	uv run ruff check {{ project_name | snake_case }} tests
 	uv run test-cli --name "{{ project_name | snake_case }}"
