@@ -5,7 +5,11 @@ kickstart_version = 1
 authors = ["Liam Power <info@liampower.dev>"]
 follow_symlinks = false
 keywords = []
-ignore = ["docs", ".venv", "venv", ".env", "env", ".git", "uv.lock", "kickstart"]
+ignore = ["docs",".serena","hooks",".venv", "venv", ".env", "env", ".git", "uv.lock", "kickstart", "template.md",".*_cache", "__pycache__"]
+
+post_gen_hooks = [
+    { name = "bootstrap project", path = "hooks/bootstrap.sh" },
+]
 
 [[variables]]
 name = "project_name"
