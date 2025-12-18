@@ -135,6 +135,16 @@ kickstart /path/to/python-template /tmp/test-project
 kickstart https://github.com/user/python-template /tmp/test-project
 ```
 
+After generating, set up the project:
+
+```bash
+cd /tmp/test-project
+make install
+pre-commit install
+```
+
+**Note:** Pre-commit is not installed in the template repo itself because the templated files (containing `{{ variables }}`) aren't valid Python/TOML until processed by kickstart.
+
 ## Common Patterns
 
 ### Python Module Names

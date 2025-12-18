@@ -5,6 +5,7 @@ Template for a minimal, tested Python package with a CLI.
 ## Quick start
 
 - Install dependencies: `make install`
+- Set up pre-commit hooks: `pre-commit install`
 - Run tests: `make test`
 - Lint/type check: `make lint` / `make typecheck`
 - Try the CLI: `uv run test-cli`
