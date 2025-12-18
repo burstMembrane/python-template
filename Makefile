@@ -10,11 +10,11 @@ typecheck:
 test: 
 	uv run pytest tests 
 lint:
-	uv run ruff check --isolated {{ project_name | snake_case }} tests
+	uv run ruff check {{ project_name | snake_case }} tests
 format:
-	uv run ruff format --isolated {{ project_name | snake_case }} tests
+	uv run ruff format {{ project_name | snake_case }} tests
 format-check:
-	uv run ruff format --isolated --check {{ project_name | snake_case }} tests
+	uv run ruff format --check {{ project_name | snake_case }} tests
 deptry:
 	uv run deptry {{ project_name | snake_case }}
 bandit:

@@ -28,6 +28,7 @@ quote-style = "double"
 
 [tool.ruff.lint]
 select = [
+    "D",      # docstring conventions
     "E",      # pycodestyle errors
     "W",      # pycodestyle warnings
     "F",      # pyflakes
@@ -48,6 +49,10 @@ select = [
     "T20",    # flake8-print
     "PLR",    # pylint refactor
 ]
+ignore = ["D100", "D104"]  # optional
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
 
 [tool.ruff.lint.mccabe]
 max-complexity = 10
