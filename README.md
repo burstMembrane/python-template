@@ -1,4 +1,4 @@
-# python-template
+# {{ project_name }}
 
 Template for a minimal, tested Python package with a CLI.
 

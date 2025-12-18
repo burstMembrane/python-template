@@ -5,21 +5,21 @@ kickstart_version = 1
 authors = ["Liam Power <info@liampower.dev>"]
 follow_symlinks = false
 keywords = []
-ignore = ["README.md", "docs", ".venv", "venv", ".env", "env", ".git"]
+ignore = ["docs", ".venv", "venv", ".env", "env", ".git", "uv.lock", "kickstart"]
 
 [[variables]]
 name = "project_name"
-default = "my_project"
+default = "my-project"
 prompt = "What is the name of this project?"
 validation = "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
-help = "The project name should be lowercase and must."
+help = "The project name should be lowercase with hyphens (kebab-case)."
 
 [[variables]]
 name = "python_version"
 default = "3.12"
 prompt = "Which Python version will this project use?"
 choices = ["3.13", "3.12", "3.11", "3.10", "3.9", "3.8", "3.7"]
-validation = "^(3\\.7|3\\.8|3\\.9|3\\.10|3\\.11|3\\.12)$"
+validation = "^(3\\.7|3\\.8|3\\.9|3\\.10|3\\.11|3\\.12|3\\.13)$"
 
 [[variables]]
 name = "project_description"

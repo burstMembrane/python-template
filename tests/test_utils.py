@@ -1,4 +1,4 @@
-from python_template.utils import add
+from {{ project_name | snake_case }}.utils import add
 
 
 def test_add() -> None:

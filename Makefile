@@ -6,19 +6,19 @@ venv:
 build:
 	uv build
 typecheck:
-	uv run mypy python_template
+	uv run mypy {{ project_name | snake_case }}
 test: 
 	uv run pytest tests 
 lint:
-	uv run ruff check python_template tests
+	uv run ruff check {{ project_name | snake_case }} tests
 format:
-	uv run ruff format python_template tests
+	uv run ruff format {{ project_name | snake_case }} tests
 format-check:
-	uv run ruff format --check python_template tests
+	uv run ruff format --check {{ project_name | snake_case }} tests
 deptry:
-	uv run deptry python_template
+	uv run deptry {{ project_name | snake_case }}
 bandit:
-	uv run bandit -r python_template -c pyproject.toml
+	uv run bandit -r {{ project_name | snake_case }} -c pyproject.toml
 audit:
 	uv run pip-audit
 pre-commit:
