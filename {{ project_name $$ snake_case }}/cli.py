@@ -22,6 +22,7 @@ def hello(name: str) -> str:
 
 
 def main() -> None:
+    """The main function for the CLI."""
     parser = argparse.ArgumentParser(description="Greet the user.")
     parser.add_argument(
         "--name", type=str, help="Name of the person to greet", required=True
