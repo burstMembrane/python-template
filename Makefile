@@ -29,6 +29,7 @@ rulesync:
 clean:
 	rm -rf build dist *.egg-info .pytest_cache .mypy_cache .ruff_cache htmlcov .coverage
 bootstrap:
+	echo "{{ python_version }}" >> .python-version
 	uv sync
 	git init
 	uv run pre-commit install

@@ -26,6 +26,8 @@ exclude = ["pyproject.toml"]
 indent-style = "space"
 quote-style = "double"
 
+
+
 [tool.ruff.lint]
 select = [
     "D",      # docstring conventions
