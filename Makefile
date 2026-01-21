@@ -6,19 +6,19 @@ venv:
 build:
 	uv build
 typecheck:
-	uv run mypy {{ project_name | snake_case }}
+	uv run mypy {{ project_name }}
 test: 
 	uv run pytest tests 
 lint:
-	uv run ruff check {{ project_name | snake_case }} tests
+	uv run ruff check {{ project_name }} tests
 format:
-	uv run ruff format {{ project_name | snake_case }} tests
+	uv run ruff format {{ project_name }} tests
 format-check:
-	uv run ruff format --check {{ project_name | snake_case }} tests
+	uv run ruff format --check {{ project_name }} tests
 deptry:
-	uv run deptry {{ project_name | snake_case }}
+	uv run deptry {{ project_name }}
 bandit:
-	uv run bandit -r {{ project_name | snake_case }} -c pyproject.toml
+	uv run bandit -r {{ project_name }} -c pyproject.toml
 audit:
 	uv run pip-audit
 pre-commit:
@@ -34,5 +34,5 @@ bootstrap:
 	git init
 	uv run pre-commit install
 	uv run pytest tests
-	uv run ruff check {{ project_name | snake_case }} tests
-	uv run test-cli --name "{{ project_name | snake_case }}"
+	uv run ruff check {{ project_name }} tests
+	uv run test-cli --name "{{ project_name }}"

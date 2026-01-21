@@ -5,7 +5,6 @@ kickstart_version = 1
 authors = ["Liam Power <info@liampower.dev>"]
 follow_symlinks = false
 keywords = []
-ignore = ["docs",".serena","hooks",".venv", "venv", ".env", "env", ".git", "uv.lock", "kickstart", "template.md",".*_cache", "__pycache__"]
 
 post_gen_hooks = [
     { name = "bootstrap project", path = "hooks/bootstrap.sh" },
@@ -13,10 +12,10 @@ post_gen_hooks = [
 
 [[variables]]
 name = "project_name"
-default = "my-project"
+default = "my_project"
 prompt = "What is the name of this project?"
-validation = "^([a-z][a-z0-9]*)(-[a-z0-9]+)*$"
-help = "The project name should be lowercase with hyphens (kebab-case)."
+validation = "^([a-z][a-z0-9]*)(_[a-z0-9]+)*$"
+help = "The project name should be lowercase with underscores (snake_case)."
 
 [[variables]]
 name = "python_version"
